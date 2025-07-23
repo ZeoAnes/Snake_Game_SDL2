@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"path": "bin/..",
+			"file_exclude_patterns": ["*.sublime-project"]
+		}
+	],
+
+	"build_systems":
+	[
+		{
+			"name": "Build Debug",
+			"working_dir": "${project_path}",
+			"cmd": "g++ -c src/main.cpp src/RenderWindow.cpp src/Entity.cpp src/math.cpp src/utils.cpp  src/ui.cpp -std=c++14 -g -Wall -m64 -I include -I C:/SDL2/include && g++ main.o RenderWindow.o Entity.o  math.o utils.o ui.o -o bin/debug/main -L C:/SDL2/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf && start bin/debug/main",
+			"selector": "source.c++",
+			"shell": true
+		},
+		{
+			"name": "Build Release",
+			"working_dir": "${project_path}",
+			"cmd": "g++ -c src/main.cpp src/RenderWindow.cpp src/Entity.cpp -std=c++14 -g -Wall -m64 -I include -I C:/SDL2/include && g++ main.o RenderWindow.o Entity.o -o bin/debug/main -L C:/SDL2/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image && start bin/debug/main",
+			"shell": true
+		}
+	]
+}
